@@ -1,0 +1,42 @@
+<div itemscope itemtype="http://schema.org/Product" id="product-{{ product.id }}" class="product-page">
+
+  <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+  <meta itemprop="image" content="{{ product.featured_image.src | img_url: 'grande' }}">
+
+  <div class="section-title desktop-12 mobile-3">
+    <h1 itemprop="name">{{ product.title }}</h1>
+  </div>
+
+  <div class="clear"></div>
+
+  <div class="mobile-hide">
+  {% if settings.show_product_sidebar %}
+  {% include 'collection-sidebar' %}
+  {% endif %}
+  </div>
+
+  <div id="bside" class="{% if settings.show_product_sidebar %}desktop-10{% else %}desktop-12{% endif %} tablet-6 mobile-3">
+    <div class="product-section">
+      {% include 'product-photos' %}
+      {% include 'product-description' %}
+    </div>
+
+    <div class="clear"></div>
+
+    {% if collection %}
+    {% include 'related-products' %}
+    {% endif %}
+
+    <div class="clear"></div>
+
+    {% if collection %}
+    <div id="product-navigation" class="desktop-12 mobile-3">
+      <span class="backto">
+        {{ 'products.product.back_to' | t }} {{ collection.title | link_to: collection.url }}
+      </span>
+    </div>
+    {% endif %}
+
+
+  </div>
+</div>

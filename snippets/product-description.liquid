@@ -1,0 +1,53 @@
+<div id="product-right" class="desktop-6 mobile-3">
+  <div id="product-description">
+    {% if collection %}
+    <div class="desktop-1 right mobile-hide">
+      {% if collection.previous_product %}
+      {{ '<i class="icon-angle-left icon-2x"></i>' | link_to: collection.previous_product }}
+      {% endif %}
+      &nbsp;
+      {% if collection.next_product %}
+      {{ '<i class="icon-angle-right icon-2x"></i>' | link_to: collection.next_product }}
+      {% endif %}
+    </div>
+    {% endif %}
+
+    {% if settings.vendor %}<h3>{{ 'products.product.designer' | t }}: {{ product.vendor }}</h3>{% endif %}
+    <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <p id="product-price">
+      {% if product.available %}
+      {% if product.compare_at_price > product.price %}
+      <span class="product-price" itemprop="price">{{ product.price | money }}</span>&nbsp;<span class="was">{{ product.compare_at_price | money }}</span>
+      {% else %}
+      <span class="product-price" itemprop="price">{{ product.price | money }}</span>
+      {% endif %}
+      {% else %}
+      <span class="product-price" itemprop="price">{{ 'products.product.sold_out' | t }}</span>
+      {% endif %}
+    </p>
+
+    <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+    <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
+
+
+      {% if settings.product-note != blank %}
+      <p class="product-note">
+        {{ settings.product-note }}
+      </p>
+      {% endif %}
+
+    {% include 'short-form' %}
+</div>
+
+    <div class="rte">
+      {{ product.description }}
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="desc">
+      {% include 'social' with product %}
+    </div>
+
+  </div>
+</div>

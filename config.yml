@@ -1,0 +1,12 @@
+---
+:api_key: 14ac6d3127708cf936ffa59aecb5f2d1
+:password: ad328ab6a7f314a9d9ac3d1f67f1bb6b
+:store: di-count-universe.myshopify.com
+:theme_id: '127643969'
+:whitelist_files:
+- layout/
+- assets/
+- config/
+- snippets/
+- templates/
+- locales/
