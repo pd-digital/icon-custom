@@ -729,6 +729,9 @@ a .icon-flip-vertical:before {
 .icon-shopping-cart:before {
   content: "\f07a";
 }
+.icon-shopping-bag:before {
+  content: "\f290";
+}
 .icon-folder-close:before {
   content: "\f07b";
 }

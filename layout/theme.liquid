@@ -15,7 +15,19 @@
 ================================================== -->
 
   <title>
-    {% if template == 'index' %}{% if page_title contains 'Welcome' %}{{ shop.name }} &ndash; Welcome{% else %}{{ page_title }}{% endif %}{% elsif template == '404' %}Page Not Found{% elsif page_title contains shop.name %}{{ page_title }}{% else %}{{ page_title }} &ndash; {{ shop.name }}{% endif %}
+    {% if template == 'index' %}
+      {% if page_title contains 'Welcome' %}
+        {{ shop.name }} &ndash; Welcome{% else %}{{ page_title }}
+      {% endif %}
+    {% elsif template == '404' %}
+      Page Not Found
+    {% elsif page_title contains shop.name %}
+      {{ page_title }}
+    {% elsif current_tags.first %}
+      {{ current_tags.first | capitalize }} &ndash; {{ shop.name }}
+    {% else %}
+      {{ page_title }} &ndash; {{ shop.name }}
+    {% endif %}
   </title>
   {% if page_description %}
   <meta name="description" content="{{ page_description }}" />
@@ -113,12 +125,11 @@
             {% endif %}
           </li>
           {% endif %}
+          <li>{% include 'iwish_v2' with 'iwishlink' %}</li>
           <li>
             <a href="/cart" {% if settings.ajax_cart_method == 'drawer' %}class="site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false"{% endif %}>
               <span class="cart-words">{{ 'cart.general.title' | t }}</span>
-              &nbsp;<i class="icon-shopping-cart"></i>
               <span class="CartCount">{{ cart.item_count }}</span>
-              &nbsp;<span class="CartCost">{{ cart.total_price | money }}</span>
             </a>
         </ul>
         {% include 'mobile-cart' %}
@@ -310,7 +321,7 @@
   <script>
     jQuery(function($) {
       ajaxCart.init({
-        formSelector: '#AddToCartForm',
+        //formSelector: '#AddToCartForm',
         cartContainer: '#CartContainer',
         addToCartSelector: '#AddToCart',
         cartCountSelector: '.CartCount',
@@ -328,5 +339,6 @@
     });
   </script>
   {% endif %}
+  {% include 'iwish_v2' with 'iwishfooter' %}
 </body>
 </html>
