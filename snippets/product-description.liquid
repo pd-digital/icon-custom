@@ -1,7 +1,7 @@
 <div id="product-right" class="desktop-4 mobile-3">
   <div id="product-description">
     {% if collection %}
-    <div class="desktop-1 right mobile-hide">
+    <div class="desktop-1 right mobile-hide" style="width: auto;">
       {% if collection.previous_product %}
       {{ '<i class="icon-angle-left icon-2x"></i>' | link_to: collection.previous_product }}
       {% endif %}
