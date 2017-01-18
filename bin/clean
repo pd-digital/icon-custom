@@ -1,0 +1,3 @@
+#!/bin/bash
+
+rm -rf assets config layout locales snippets templates

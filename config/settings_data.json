@@ -2055,8 +2055,6 @@
     "index-links-hover-color": "#999",
     "homepage-wide": "true",
     "pages-right": "about-this-theme",
-    "content_for_index": [
-
-    ]
+    "content_for_index": []
   }
 }
