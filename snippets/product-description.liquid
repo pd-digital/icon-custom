@@ -1,4 +1,4 @@
-<div id="product-right" class="desktop-4 mobile-3">
+<div id="product-right" class="desktop-6 mobile-3">
   <div id="product-description">
     {% if collection %}
     <div class="desktop-1 right mobile-hide" style="width: auto;">
@@ -25,6 +25,97 @@
       <span class="product-price" itemprop="price">{{ 'products.product.sold_out' | t }}</span>
       {% endif %}
     </p>
+      <!-- Begin Afterpay Code -->
+{% assign afterpay_any_variants_eligible = false %}
+{% if shop.currency == 'AUD' %}
+  {% for afterpay_variant in product.variants %}
+    {% if afterpay_variant.available and afterpay_variant.price > 0 and afterpay_variant.price < 100000 %}
+      {% assign afterpay_any_variants_eligible = true %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+{% if afterpay_any_variants_eligible %}
+  <p class="afterpay-paragraph" style="display:{% if product.selected_or_first_available_variant.available and product.selected_or_first_available_variant.price > 0 and product.selected_or_first_available_variant.price < 100000 %}block{% else %}none{% endif %};" data-product-id="{{ product.id }}">
+    or make 4 interest-free payments of 
+    <span class="afterpay-instalments">{{ product.selected_or_first_available_variant.price | divided_by: 4 | money_with_currency }}</span> fortnightly with 
+    <a style="display:inline-block; margin-bottom: 10px;" target="_blank" href="https://www.afterpay.com.au/terms">
+      <img style="vertical-align:bottom" width="100" alt="Afterpay" src="https://www.afterpay.com.au/wp-content/themes/afterpay/assets/img/logo_scroll.png" /> 
+      <span style="font-size:12px"> <u>More info</u> </span>  
+    </a>
+  </p>
+  {% if product.price_varies %}
+    <script type="text/javascript">
+      if (typeof Afterpay === 'undefined') {
+        var Afterpay = {products:[]};
+        Afterpay.loadScript = function(url, callback) {
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          if (script.readyState) { // I.E.
+            script.onreadystatechange = function() {
+              if (script.readyState == 'loaded' || script.readyState == 'complete') {
+                script.onreadystatechange = null;
+                callback();
+              }
+            };
+          } else { // Others
+            script.onload = function() {
+              callback();
+            };
+          }
+          script.src = url;
+          document.getElementsByTagName('head')[0].appendChild(script);
+        };
+        Afterpay.init = function($) {
+          $('body').on('change', $('form[action^="/cart/add"]'), function(event) {
+            var $form = $(event.target).closest('form');
+            var h, i, j = false;
+            var formdata_str = $form.serialize();
+            var formdata_arr = formdata_str.split('&');
+            var should_show_instalments = false;
+            var i, arr, selected_variant_id;
+            var $afterpay_paragraph = null;
+            for (i = 0; i < formdata_arr.length; i++) {
+              arr = formdata_arr[i].split('=');
+              if (arr[0] == 'id') {
+                selected_variant_id = arr[1];
+              }
+            }
+            if (selected_variant_id && selected_variant_id.match(/[0-9]+/)) {
+              $.each(Afterpay.products, function(product_index, product) {
+                $.each(product.variants, function(variant_index, variant) {
+                  if (variant.id == selected_variant_id) {
+                    $afterpay_paragraph = $('.afterpay-paragraph[data-product-id=' + product.id + ']');
+                    if (variant.available && variant.price > 0 && variant.price < 100000) {
+                      should_show_instalments = true;
+                      $afterpay_paragraph.find('.afterpay-instalments').text('$' + (Math.floor(variant.price / 4) / 100).toFixed(2) + ' AUD');
+                    }
+                  }
+                });
+              });
+            }
+            if ($afterpay_paragraph !== null) {
+              if (should_show_instalments) {
+                $afterpay_paragraph.show();
+              } else {
+                $afterpay_paragraph.hide();
+              }
+            }
+          });
+        };
+        if (typeof jQuery === 'undefined' || jQuery.fn.jquery != '1.12.4') {
+          Afterpay.loadScript('https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js', function() {
+            var jQuery_1_12_4 = jQuery.noConflict(true);
+            Afterpay.init(jQuery_1_12_4);
+          });
+        } else {
+          Afterpay.init(jQuery);
+        }
+      }
+      Afterpay.products.push({{ product | json }});
+    </script>
+  {% endif %}
+{% endif %}
+<!-- End Afterpay Code -->
 
     <meta itemprop="priceCurrency" content="{{ shop.currency }}">
     <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
