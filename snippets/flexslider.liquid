@@ -26,7 +26,7 @@
           {% assign slide_title = 'slide-' | append: i | append: '-title' %}
           {% assign slide_caption = 'slide-' | append: i | append: '-caption' %}
           {% assign slide_button = 'slide-' | append: i | append: '-button' %}
-          {% assign slide_button_text = 'slide-' | append: i | append: '-button-text' %}        
+          {% assign slide_button_text = 'slide-' | append: i | append: '-button-text' %}
 
           <li>
             <a href="{{ settings[slide_link_url] }}">
@@ -35,17 +35,17 @@
             <div class="flex-caption {{ index }}">
               <div class="caption-inners">
 
-                {% if settings[slide_title] != blank %}                        
+                {% if settings[slide_title] != blank %}
                 <h2 class="slide-title">{{ settings[slide_title] }}</h2>
                 {% endif %}
-                {% if settings[slide_caption] != blank %}            
+                {% if settings[slide_caption] != blank %}
                 <p class="caption">{{ settings[slide_caption] }}</p>
                 {% endif %}
                 {% if settings[slide_button] %}
-                <div class="cta">
+                <div class="cta mobile-only">
                   <a href="{{ settings[slide_link_url] }}">{{ settings[slide_button_text] }}</a>
                 </div>
-                {% endif %} 
+                {% endif %}
               </div>
             </div>
           </li>
@@ -53,12 +53,12 @@
           {% endfor %}
         </ul>
       </div>
-      {% endif %} 
+      {% endif %}
 
       {% if settings.display-wide %}
       {% else %}
     </div>
   </div>
-  {% endif %}    
-  <div class="clear"></div>  
+  {% endif %}
+  <div class="clear"></div>
 </section>
