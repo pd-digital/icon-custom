@@ -1,10 +1,10 @@
 {% assign collection = collections[settings.homepage-collection] %}
-<section id="homepage-products" class="no-fouc">    
+<section id="homepage-products" class="no-fouc">
   <div class="section-title row">
     <h2>{{ 'layout.homepage.featured_products_title' | t }}</h2>
   </div>
-  <div class="row"> 
-    
+  <div class="row">
+
     {% if settings.homepage-collection == blank %}
     <div class="theme-instructions">
       <div class="onboard desktop-12 tablet-6 mobile-3">
@@ -24,7 +24,7 @@
             <div class="prod-image">
               <img src="//cdn.shopify.com/s/images/themes/product-{{ forloop.index }}.png" alt="{{ image.alt }}" />
             </div>
-            <div class="product-details"> 
+            <div class="product-details">
                 <h3>Sample product title</h3>
                 <div class="price">
                   <div class="prod-price">9.99</div>
@@ -35,7 +35,7 @@
         </div>
       </div>
     </div>
-    {% endif %}    
+    {% endif %}
 
     {% if settings.homepage-product-layout == 'grid' %}
 
@@ -44,17 +44,21 @@
       <div class="product desktop-3 tablet-half mobile-half{% cycle ' first', '', '', ' last' %}" id="prod-{{ product.id }}" data-alpha="{{ product.title }}" data-price="{{ product.price }}">
         {% include 'product-listing' %}
       </div>
+      {% capture modulo %}{{ forloop.index | modulo: 2 }}{% endcapture %}
+      {% if modulo == '0' %}
+      <div class="clear visible-tablet"></div>
+      {% endif %}
       {% endfor %}
-    </article> 
+    </article>
 
     {% elsif settings.homepage-product-layout == 'carousel' %}
 
     <div class="collection-carousel">
       {% for product in collection.products %}
-      <div class="lazyOwl product" data-alpha="{{ product.title }}" data-price="{{ product.price }}">     
+      <div class="lazyOwl product" data-alpha="{{ product.title }}" data-price="{{ product.price }}">
         {% include 'product-listing' %}
       </div>
-      {% endfor %} 
+      {% endfor %}
     </div>
 
     {% endif %}

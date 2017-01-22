@@ -1,6 +1,6 @@
-<section id="homepage-collections" class="no-fouc">  
+<section id="homepage-collections" class="no-fouc">
 
-  
+
     {% if settings.home-collection-linklist == blank %}
     <div class="theme-instructions row">
       <div class="onboard desktop-12 tablet-6 mobile-3">
@@ -29,29 +29,29 @@
         {% endfor %}
       </div>
     </div>
-    {% endif %}  
-  
+    {% endif %}
 
-  {% if settings.homepage-collection-layout == 'carousel' %}  
+
+  {% if settings.homepage-collection-layout == 'carousel' %}
   {% for link in linklists[settings.home-collection-linklist].links %}
-  {% assign collection = link.object %}  
+  {% assign collection = link.object %}
   <div class="section-title row">
     <h2><a href="{{ collection.url }}" title="{{ collection_title }}">{{ collection.title }}</a></h2>
-  </div> 
+  </div>
   <article id="collection-loop" class="row">
     {% include 'homepage-collections-loop' %}
-  </article> 
+  </article>
   {% endfor %}
   {% elsif settings.homepage-collection-layout == 'grid' %}
-  
+
   <div class="section-title row">
     <h2>{{ 'layout.homepage.featured_collections_title' | t }}</h2>
-  </div>   
+  </div>
   <div class="clear"></div>
   <article id="collection-loop" class="row">
   {% for link in linklists[settings.home-collection-linklist].links %}
-  {% assign collection = link.object %}  
-    <div class="product desktop-3 tablet-half mobile-half{% cycle ' first', '', '', ' last' %}" data-alpha="{{ collection.title }}">    
+  {% assign collection = link.object %}
+    <div class="product desktop-3 tablet-half mobile-half{% cycle ' first', '', '', ' last' %}" data-alpha="{{ collection.title }}">
       <div class="collection-image ci">
         <a href="{{ collection.url }}" title="{{ collection_title }}">
           {% if collection.image %}
@@ -59,11 +59,11 @@
           {% else %}
           {{ collection.products.first.featured_image | product_img_url: 'grande' | img_tag: collection_title }}
           {% endif %}
-        </a>     
+        </a>
       </div>
-      <div class="product-details">  
+      <div class="product-details">
         <h3><a href="{{ collection.url }}" title="{{ collection_title }}">{{ collection.title }}</a></h3>
-      </div> 
+      </div>
     </div>
     {% endfor %}
   </article>
