@@ -58,6 +58,14 @@
 .gridlock .row .desktop-11 { width: 89.5833333333333333%; }
 .gridlock .row .desktop-12 { width: 97.9166666666666667%; }
 
+/* The floodening */
+.gridlock.collection .content-row { width: 100%; }
+.gridlock.collection .content-row .desktop-12 { width: 100%; margin: 0; }
+.gridlock.collection .content-row .desktop-3 { width: 24.8%; margin: 0.1%; }
+@media screen and (max-width: 740px) {
+  .gridlock.collection .content-row .mobile-half { width: 49.8%; margin: 0.1%; }
+}
+
 /* Push Cells */
 .gridlock .row .desktop-push-1  { margin-left: 9.375%; }
 .gridlock .row .desktop-push-2  { margin-left: 17.7083333333333333%; }
@@ -246,11 +254,17 @@
 }
 
 @media screen and (min-width: 741px) {
-  .visible-phone { display: none; }
+  .visible-phone { display: none !important; }
+}
+@media screen and (min-width: 981px) {
+  .visible-tablet { display: none !important; }
 }
 
 @media screen and (max-width: 740px) {
-  .hidden-phone { display: none; }
+  .hidden-phone { display: none !important; }
+}
+@media screen and (max-width: 980px) {
+  .hidden-tablet { display: none !important; }
 }
 
 * {
@@ -630,6 +644,7 @@ header {
 
 .coverheader {
   position: fixed;
+  z-index: 1000;
 }
 
 /* REST OF SITE SCROLLING HEADER BACKGROUND */
@@ -1409,6 +1424,9 @@ section#homepage-products h2, section#homepage-products .fr a {
   color: {{ settings.homepage-collection-title-color }}! important;
 }
 
+section#homepage-products .product {
+  clear: none;
+}
 
 section#homepage-pages-one .row, section#homepage-pages-two .row, section#homepage-pages-three .row, section#homepage-pages-four .row, section#homepage-pages-five .row {
   display: table;
@@ -1697,6 +1715,8 @@ span.prev-prod, span.next-prod {
 
 #collection-description .rte { border-top: 0; margin: 0; padding: 0; }
 .product { margin-bottom: 20px; position: relative; }
+.collection .product { z-index: 10; }
+.collection .product:hover { z-index: 100; }
 
 .product-info {
   text-align: center;
@@ -1829,6 +1849,22 @@ span.prev-prod, span.next-prod {
 .reveal:hover .hidden {
   z-index: 1;
   opacity: 1;
+}
+.reveal img { display: block; }
+
+.reveal .product-details {
+  text-align: center;
+  margin-top: 0;
+  background: #fff;
+  padding: 20px 0;
+  display: block;
+}
+
+.product-details { display: none; }
+
+@media screen and (max-width: 980px) {
+  .reveal .product-details { display: none; }
+  .product-details { display: block; }
 }
 
 @media (min-width: 480px) and (max-width: 979px) {
