@@ -245,11 +245,11 @@
   margin-right: 0;
 }
 
-@media screen and (min-width: 739px) {
+@media screen and (min-width: 741px) {
   .visible-phone { display: none; }
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 740px) {
   .hidden-phone { display: none; }
 }
 
@@ -1935,6 +1935,9 @@ img.zoomImg { background: {{ settings.background }}; }
 
 #product-description { text-align: left; }
 #product-description h1, #product-right h5 { text-transform: uppercase; }
+@media screen and (max-width: 740px) {
+  #product-description h1 { margin-top: 20px; margin-bottom: 0; }
+}
 
 p.product-note {
   clear: left;
