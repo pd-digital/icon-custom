@@ -1852,7 +1852,10 @@ span.prev-prod, span.next-prod {
 }
 .reveal img { display: block; }
 
-.reveal .product-details {
+.reveal .product-details { display: none; } // Display none by default
+.product-details { display: block; }
+
+.collection .reveal .product-details {
   text-align: center;
   margin-top: 0;
   background: #fff;
@@ -1860,11 +1863,11 @@ span.prev-prod, span.next-prod {
   display: block;
 }
 
-.product-details { display: none; }
+.collection .product-details { display: none; } // Collection page, hide the default details by default
 
 @media screen and (max-width: 980px) {
-  .reveal .product-details { display: none; }
-  .product-details { display: block; }
+  .collection .reveal .product-details { display: none; }
+  .collection .product-details { display: block; }
 }
 
 @media (min-width: 480px) and (max-width: 979px) {
