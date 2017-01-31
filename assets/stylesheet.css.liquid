@@ -429,6 +429,21 @@ input[type="button"].full-width {
   padding-right: 0 !important;
   text-align: center; }
 
+.button-ghost {
+  background-color: #fff;
+  border: 1px solid #000;
+  color: #000;
+  text-decoration: none;
+  padding: 14px 0 15px 0;
+  text-align: center;
+}
+
+.button-ghost:hover {
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+}
+
 /* Fix for odd Mozilla border & padding issues */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
@@ -1993,7 +2008,7 @@ p.product-note {
   width: 50px! important;
   background: transparent! important;
   border: 1px solid {{ settings.dotted_color }};
-  display: inline-block;
+  display: block;
   color: {{ settings.text_color }};
   margin-bottom: 0;
 }
@@ -2026,6 +2041,22 @@ p.product-note {
   width: 100%! important;
   float: left;
   text-transform: uppercase;
+
+  max-width: 50% !important;
+}
+
+.iwishAddWrap {
+  float: right;
+  margin-top: 10px;
+}
+
+.iwishAddWrap .button {
+  margin: 0;
+}
+
+.add,
+.iwishAddWrap {
+  width: 48%;
 }
 
 @media screen and (max-width: 740px ) {
@@ -2036,6 +2067,16 @@ p.product-note {
   }
   .add {
     margin-left: 10px! important;
+  }
+
+  .iwishAddWrap {
+    margin-top: 0;
+  }
+
+  .add,
+  .iwishAddWrap {
+    max-width: 100% !important;
+    width: 100%;
   }
 }
 
