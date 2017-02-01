@@ -296,6 +296,7 @@
 
   {% if template contains 'product' %}
 
+  {{ 'pd-product-galleria.js' | asset_url | script_tag }}
   <script type="text/javascript" charset="utf-8">
     //<![CDATA[
     Shopify.Products.recordRecentlyViewed();

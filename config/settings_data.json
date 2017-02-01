@@ -1657,7 +1657,7 @@
     "collection_side_4": "",
     "shop_by_designer": false,
     "shop_by_designer_title": "Shop by Designer",
-    "show_product_sidebar": true,
+    "show_product_sidebar": false,
     "enable-zoom": false,
     "thumbnails": "left",
     "show-sku": false,

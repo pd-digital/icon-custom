@@ -1,13 +1,25 @@
-<div id="product-photos" class="desktop-6 mobile-3">
+<div id="product-photos" class="desktop-8 mobile-3">
 
   {% assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image %}
 
   <!-- Desktop/Tablet -->
-  {% for image in product.images %}
-  <div class="hidden-phone bigimage-{{ product.id }} desktop-12 main-product-image">
-    <img id="{{ image.id }}" data-image-id="{{ image.id }}" src="{{ image | product_img_url: 'master' }}" alt='{{ image.alt | escape }}' />
+  <div class="pd-product-galleria">
+    <div class="pd-product-galleria-images">
+    {% for image in product.images %}
+      <div class="hidden-phone bigimage-{{ product.id }} main-product-image main-product-image-{{ forloop.index0 }}">
+        <img id="{{ image.id }}" data-image-id="{{ image.id }}" src="{{ image | product_img_url: 'master' }}" alt='{{ image.alt | escape }}' />
+      </div>
+    {% endfor %}
+    </div>
+
+    <div class="owl-buttons">
+      <div class="owl-prev"></div>
+    </div>
+
+    <div class="owl-buttons owl-buttons-right">
+      <div class="owl-next"></div>
+    </div>
   </div>
-  {% endfor %}
   <!-- End Desktop/Tablet -->
 
   <!-- Phone -->
