@@ -5927,6 +5927,13 @@
         "label": "Enable the product page carousel",
         "default": false,
         "info": "CAUTION: This will remove the collection sidebar"
+      },
+      {
+        "type": "checkbox",
+        "id": "the_floodening",
+        "label": "The floodening, it's happening!",
+        "default": false,
+        "info": "Just flood it"
       }
     ]
   }
