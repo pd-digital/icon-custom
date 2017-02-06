@@ -44,6 +44,10 @@
       <div class="product desktop-3 tablet-half mobile-half{% cycle ' first', '', '', ' last' %}" id="prod-{{ product.id }}" data-alpha="{{ product.title }}" data-price="{{ product.price }}">
         {% include 'product-listing' %}
       </div>
+      {% capture modulo %}{{ forloop.index | modulo: 2 }}{% endcapture %}
+      {% if modulo == '0' %}
+      <div class="clear visible-tablet"></div>
+      {% endif %}
       {% endfor %}
     </article>
 
