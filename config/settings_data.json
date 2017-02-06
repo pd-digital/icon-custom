@@ -1657,7 +1657,7 @@
     "collection_side_4": "",
     "shop_by_designer": false,
     "shop_by_designer_title": "Shop by Designer",
-    "show_product_sidebar": false,
+    "show_product_sidebar": true,
     "enable-zoom": false,
     "thumbnails": "left",
     "show-sku": false,
@@ -2055,6 +2055,7 @@
     "index-links-hover-color": "#999",
     "homepage-wide": "true",
     "pages-right": "about-this-theme",
-    "content_for_index": []
+    "content_for_index": [],
+    "product_page_image_carousel": true
   }
 }

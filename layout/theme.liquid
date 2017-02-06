@@ -296,7 +296,9 @@
 
   {% if template contains 'product' %}
 
-  {{ 'pd-product-galleria.js' | asset_url | script_tag }}
+    {% if settings.product_page_image_carousel %}
+      {{ 'pd-product-galleria.js' | asset_url | script_tag }}
+    {% endif %}
   <script type="text/javascript" charset="utf-8">
     //<![CDATA[
     Shopify.Products.recordRecentlyViewed();

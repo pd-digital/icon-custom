@@ -1917,9 +1917,9 @@ ul#sort-me li.filter ul li {
 /* ============================================== */
 /* ============ pd-product-galleria ============= */
 /* ============================================== */
+{% if settings.product_page_image_carousel %}
 .pd-product-galleria {
   display: inline-block;
-  overflow: hidden;
   width: 100%;
   position: relative;
 }
@@ -1930,6 +1930,7 @@ ul#sort-me li.filter ul li {
 
 .pd-product-galleria .foo {
   position: relative;
+  overflow: hidden;
 }
 
 .pd-product-galleria-images {
@@ -1945,7 +1946,7 @@ ul#sort-me li.filter ul li {
 }
 
 .pd-product-galleria .owl-buttons-right {
-  right: 0;
+  right: -8px;
 }
 
 .pd-product-galleria .owl-next {
@@ -1963,7 +1964,7 @@ ul#sort-me li.filter ul li {
 
 .pd-product-galleria .main-product-image {
   float: left;
-  width: 368px;
+  width: 372px;
   margin: 0 5px;
   transition: transform .2s;
   display: none;
@@ -1983,7 +1984,7 @@ ul#sort-me li.filter ul li {
 .pd-product-galleria .main-product-image-1 {
   display: block;
 }
-
+{% endif %}
 /* ============================================== */
 /* ================ product.liquid ================ */
 /* ============================================== */

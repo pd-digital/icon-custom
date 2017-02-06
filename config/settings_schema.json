@@ -5917,5 +5917,17 @@
         "default": "USD"
       }
     ]
+  },
+  {
+    "name": "Features",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "product_page_image_carousel",
+        "label": "Enable the product page carousel",
+        "default": false,
+        "info": "CAUTION: This will remove the collection sidebar"
+      }
+    ]
   }
 ]
