@@ -1,7 +1,6 @@
 (function($) {
 
   var PdGalleria = function() {
-    var COLUMNS = 2
     var TRANSITION_SPEED = 300
 
     this.prevButton = $('.pd-product-galleria .owl-prev')
@@ -10,6 +9,14 @@
     this.images = $('.pd-product-galleria .main-product-image')
     this.firstImage = $('.main-product-image.hidden-phone').first()
     this.currentImageIndex = 0
+    this.resizeTime = null
+
+    this.columns = function() {
+      if ($(window).width() < 1220) {
+        return 1
+      }
+      return 2
+    }
 
     this.getImageWidth = function() {
       return this.firstImage.width() +
@@ -26,13 +33,10 @@
       this.images.show()
     }
 
-    this.maxOffset = function() {
-      return (this.getImageCount() - COLUMNS) * this.getImageWidth() * -1
-    }
-
     this.addBindings = function() {
       this.prevButton.on('click', this.onPrevClick.bind(this))
       this.nextButton.on('click', this.onNextClick.bind(this))
+      $(window).on('resize', this.onResize.bind(this))
     }
 
     this.getImageOffset = function($image) {
@@ -62,12 +66,22 @@
       })
     }
 
+    this.onResize = function() {
+      this.setPdGalleriaSize()
+      this.moveTheImagesIdiot()
+      this.setButtonState()
+
+      if (this.currentImageIndex > (this.images.size() - this.columns())) {
+        this.currentImageIndex -= 1
+      }
+    }
+
     this.atFirstImage = function() {
       return this.currentImageIndex === 0
     }
 
     this.atLastImage = function() {
-      return this.currentImageIndex === this.images.size() - COLUMNS
+      return this.currentImageIndex === this.images.size() - this.columns()
     }
 
     this.setButtonState = function() {

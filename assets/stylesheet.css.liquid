@@ -1928,12 +1928,17 @@ ul#sort-me li.filter ul li {
   .pd-product-galleria { display: none; }
 }
 
+.pd-product-galleria .foo {
+  position: relative;
+}
+
 .pd-product-galleria-images {
   display: inline-block;
   width: 100%;
 }
 
 .pd-product-galleria .owl-buttons {
+  z-index: 1;
   position: absolute;
   top: 50%;
   margin-top: -20px;
@@ -1962,6 +1967,16 @@ ul#sort-me li.filter ul li {
   margin: 0 5px;
   transition: transform .2s;
   display: none;
+}
+@media screen and (min-width: 740px) and (max-width: 980px){
+  .pd-product-galleria .main-product-image {
+    width: 337px;
+  }
+}
+@media screen and (min-width: 981px) and (max-width: 1220px){
+  .pd-product-galleria .main-product-image {
+    width: 607px;
+  }
 }
 
 .pd-product-galleria .main-product-image-0,
