@@ -4,6 +4,7 @@ development:
   store: di-count-universe.myshopify.com
   ignore_files:
     - bin/*
+    - config/settings_data.json
 production:
   password: ad328ab6a7f314a9d9ac3d1f67f1bb6b
   theme_id: "127643969"

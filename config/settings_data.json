@@ -2056,6 +2056,6 @@
     "homepage-wide": "true",
     "pages-right": "about-this-theme",
     "content_for_index": [],
-    "product_page_image_carousel": true
+    "product_page_image_carousel": false
   }
 }
