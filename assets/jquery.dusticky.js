@@ -114,11 +114,11 @@ $(document).ready(function() {
     return ( scrollBottomElemOffset >= bottomParentOffset );
   }
 
-  if ($('#product-description').length) {
-    init({
-      elemSelector: '#product-description',
-      elemParentSelector: '.product-section',
-      offsetTop: $('header').height() + 20
-    });
-  }
+  // if ($('#product-description').length) {
+  //   init({
+  //     elemSelector: '#product-description',
+  //     elemParentSelector: '.product-section',
+  //     offsetTop: $('header').height() + 20
+  //   });
+  // }
 });
