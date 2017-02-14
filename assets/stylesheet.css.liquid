@@ -2055,12 +2055,24 @@ ul#sort-me li.filter ul li {
   display: block;
 }
 {% endif %}
+
+
+/* ============================================== */
+/* ================ product-tabs ================ */
+/* ============================================== */
+.product-tabs {}
+.product-tabs__tab-nav { list-style-type: none; border-bottom: 1px solid #eee; margin-bottom: 8px; }
+.product-tabs__tab-nav__link { cursor: pointer; display: inline-block; padding-bottom: 4px; text-transform: uppercase; }
+.product-tabs__tab-nav__link + .product-tabs__tab-nav__link { margin-left: 10px; }
+.product-tabs__tab-nav__link.active { background: none; border-bottom: 2px solid #000; font-weight: 600; }
+.product-tabs__tab-nav__link:hover { opacity: 0.9; }
+.product-tabs__tabs .product-tabs__tab-content { display: none }
+.product-tabs__tabs .product-tabs__tab-content:first-child { display: block }
+
+
 /* ============================================== */
 /* ================ product.liquid ================ */
 /* ============================================== */
-
-
-
 #product-description form .selecter {
   display: inline-block;
   width: 50%;
@@ -2117,7 +2129,7 @@ p.product-note {
   width: 100%;
   float: left;
   margin-bottom: 10px;
-  border-bottom: 1px solid {{ settings.dotted_color }};
+  // border-bottom: 1px solid {{ settings.dotted_color }};
   padding-top: 10px;
 }
 

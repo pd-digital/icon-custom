@@ -139,9 +139,13 @@
       {% include 'short-form' %}
     </div>
 
-    <div class="rte">
-      {{ product.description }}
-    </div>
+    {% if settings.product_page_tabs_enabled %}
+      {% include 'product-tabs' %}
+    {% else %}
+      <div class="rte">
+        {{ product.description }}
+      </div>
+    {% endif %}
 
     <div class="clear"></div>
 

@@ -5629,6 +5629,31 @@
         "type": "text",
         "id": "product-note",
         "label": "Product page note"
+      },
+      {
+        "type": "textarea",
+        "id": "product_shipping_info",
+        "label": "Product shipping information"
+      },
+      {
+        "type": "image",
+        "id": "bralet-dress-size-guide.jpg",
+        "label": "Bralet dress size guide image (size-guide-bralet-dress)"
+      },
+      {
+        "type": "image",
+        "id": "t-shirt-size-guide.jpg",
+        "label": "T-shirt size guide image (size-guide-t-shirt)"
+      },
+      {
+        "type": "image",
+        "id": "bikini-bottom-size-guide.jpg",
+        "label": "Bikini bottom size guide image (size-guide-bikini-bottom)"
+      },
+      {
+        "type": "image",
+        "id": "bra-size-guide.jpg",
+        "label": "Bra size guide image (size-guide-bra)"
       }
     ]
   },
@@ -5934,6 +5959,13 @@
         "label": "The floodening, it's happening!",
         "default": false,
         "info": "Just flood it"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_page_tabs_enabled",
+        "label": "Product page tabs",
+        "default": false,
+        "info": "Use tabs on the product page"
       }
     ]
   }
