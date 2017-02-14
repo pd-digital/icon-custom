@@ -23,7 +23,7 @@
 
     <div id="product-tab-2" class="product-tabs__tab-content">
       {% if size_guide %}
-      <a class="product-tabs__image-thumb" href="{{ size_guide_image_id | asset_img_url: 'original' }}"><img src="{{ size_guide_image_id | asset_img_url: '400x' }}" alt=""/></a>
+      <a class="product-tabs__image-thumb" href="{{ size_guide_image_id | asset_img_url: '1024x' }}"><img src="{{ size_guide_image_id | asset_img_url: '480x' }}" alt=""/></a>
       {% else %}
       <p>There is no size guide available for this product.</p>
       {% endif %}
