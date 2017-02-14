@@ -938,12 +938,13 @@
 		_loadImage: function () {
 			// Reset preload image so it is later possible to check "complete" property
 			var img = F.imgPreload = new Image();
+			var pixelRatio = window.devicePixelRatio || F.opts.pixelRatio;
 
 			img.onload = function () {
 				this.onload = this.onerror = null;
 
-				F.coming.width  = this.width / F.opts.pixelRatio;
-				F.coming.height = this.height / F.opts.pixelRatio;
+				F.coming.width  = this.width / pixelRatio;
+				F.coming.height = this.height / pixelRatio;
 
 				F._afterLoad();
 			};
