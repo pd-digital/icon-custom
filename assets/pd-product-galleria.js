@@ -90,8 +90,6 @@
     }
 
     this.init = function() {
-      console.log('pd-galleria', 'init')
-
       this.setPdGalleriaSize()
       this.showAllImages()
       this.addBindings()
