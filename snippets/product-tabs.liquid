@@ -1,12 +1,3 @@
-{% assign size_guide_tag_prefix = 'size-guide-' %}
-{% for tag in product.tags %}
-  {% if tag contains size_guide_tag_prefix %}
-    {% assign size_guide = tag | replace: size_guide_tag_prefix, '' %}
-    {% assign size_guide_image_id = size_guide | append: '-size-guide.jpg' %}
-    {% break %}
-  {% endif %}
-{% endfor %}
-
 <div class="product-tabs">
   <ul class="product-tabs__tab-nav">
     <li class="product-tabs__tab-nav__link active" data-target="#product-tab-1">Information</li>
@@ -22,11 +13,9 @@
     </div>
 
     <div id="product-tab-2" class="product-tabs__tab-content">
-      {% if size_guide %}
-      <a class="product-tabs__image-thumb" href="{{ size_guide_image_id | asset_img_url: '1024x' }}"><img src="{{ size_guide_image_id | asset_img_url: '480x' }}" alt=""/></a>
-      {% else %}
-      <p>There is no size guide available for this product.</p>
-      {% endif %}
+      {% assign size_guide = product.title | handleize | append: '-size-guide.png' %}
+      <img src="{{ size_guide | file_img_url: '480x' }}" alt="" onerror="handleMissingImage(this);"/>
+      <p id="size-guide-error" style="display:none;" title="{{ size_guide }}">There is no size guide available for this product.</p>
     </div>
 
     {% if settings.product_shipping_info != "" %}
@@ -38,6 +27,11 @@
 </div>
 
 <script>
+  var handleMissingImage = function(elem) {
+    elem.style.display = 'none'
+    document.querySelector('#size-guide-error').style.display = 'block'
+  }
+
   $(document).ready(function() {
     $(".product-tabs__image-thumb").fancybox()
 
