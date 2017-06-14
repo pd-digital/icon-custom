@@ -1,13 +1,13 @@
 development:
   password: xxx
-  theme_id: "127643969"
+  theme_id: "166014413"
   store: di-count-universe.myshopify.com
   ignore_files:
     - bin/*
     - config/settings_data.json
 uat:
   password: xxx
-  theme_id: "127643969"
+  theme_id: "167635277"
   store: di-count-universe.myshopify.com
   ignore_files:
     - bin/*
