@@ -20,4 +20,3 @@ production:
   readonly: true
   ignore_files:
     - bin/*
-    - config/settings_data.json
