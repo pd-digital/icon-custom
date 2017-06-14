@@ -41,9 +41,11 @@
     <label for="quantity">Quantity</label>
     <input min="1" type="number" class="quantity" name="quantity" value="1" />
     <input type="submit" name="button" class="add" id="AddToCart" value="{{ 'products.product.add_to_cart' | t }}" />
+    {% include 'iwish_v2' with 'iwishproduct' %}
   </div>
+  {% else %}
+    {% include 'iwish_v2' with 'iwishproduct' %}
   {% endif %}
-	{% include 'iwish_v2' with 'iwishproduct' %}
 </form>
 
 <script>
