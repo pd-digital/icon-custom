@@ -1,21 +1,21 @@
 development:
   password: xxx
-  theme_id: xxx
-  store: xxx
+  theme_id: "127643969"
+  store: di-count-universe.myshopify.com
   ignore_files:
     - bin/*
     - config/settings_data.json
 uat:
   password: xxx
-  theme_id: xxx
-  store: xxx
+  theme_id: "127643969"
+  store: di-count-universe.myshopify.com
   ignore_files:
     - bin/*
     - config/settings_data.json
 production:
   password: xxx
-  theme_id: xxx
-  store: xxx
+  theme_id: "127643969"
+  store: di-count-universe.myshopify.com
   timeout: 60s
   readonly: true
   ignore_files:
