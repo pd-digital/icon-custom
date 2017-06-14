@@ -3964,3 +3964,75 @@ body.password form#login_form {
       line-height: 36px;
       background: url({{ 'select-arrow.png' | asset_url }}) no-repeat right #fff;
     }
+
+
+/* ============================================== */
+/* ================== FAQs ====================== */
+/* ============================================== */
+.chevron {
+  transition: color .2s;
+  transform: translate(-10px, 10px);
+}
+
+.chevron.active {
+  background: none;
+}
+
+.chevron::before {
+  transition: all .4s;
+	border-style: solid;
+	border-width: 0.08em 0.08em 0 0;
+	content: '';
+	display: inline-block;
+	height: 0.45em;
+	transform: rotate(135deg);
+  transform-origin: 100% 0%;
+	vertical-align: top;
+	width: 0.45em;
+}
+
+.chevron.active:before {
+	transform: rotate(-45deg);
+}
+
+.faqs {
+  margin-bottom: 60px;
+}
+
+.faq__question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: bold;
+}
+
+.faq__question .faq__question__text {
+  padding-right: 15px;
+}
+
+.faq__question:hover .chevron {
+  color: #ccc;
+}
+
+.faq__divider {
+  border-top: 1px solid #ccc;
+  width: 100%;
+  height: 1px;
+}
+
+.faq__question, .faq__answer {
+  padding: 15px 10px;
+}
+
+.faq__answer {
+  display: none;
+}
+
+.faq__answer p {
+  font-size: 14px;
+  line-height: 20px;
+}
