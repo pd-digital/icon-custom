@@ -1,22 +1,23 @@
 development:
-  password: ad328ab6a7f314a9d9ac3d1f67f1bb6b
-  theme_id: "166014413"
-  store: di-count-universe.myshopify.com
+  password: xxx
+  theme_id: xxx
+  store: xxx
   ignore_files:
     - bin/*
     - config/settings_data.json
 uat:
-  password: ad328ab6a7f314a9d9ac3d1f67f1bb6b
-  theme_id: "167635277"
-  store: di-count-universe.myshopify.com
+  password: xxx
+  theme_id: xxx
+  store: xxx
   ignore_files:
     - bin/*
     - config/settings_data.json
 production:
-  password: ad328ab6a7f314a9d9ac3d1f67f1bb6b
-  theme_id: "127643969"
-  store: di-count-universe.myshopify.com
+  password: xxx
+  theme_id: xxx
+  store: xxx
   timeout: 60s
   readonly: true
   ignore_files:
     - bin/*
+    - config/settings_data.json
