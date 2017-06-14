@@ -1,0 +1,15 @@
+<div class="product-details">
+  <a href="{{ product.url | within: collection }}">
+    <h3>{{ product.title }}</h3>
+    {% if settings.vendor %}<h4>{{ product.vendor }}</h4>{% endif %}
+  </a>
+
+  <div class="price">
+    {% if product.price < product.compare_at_price %}
+    <div class="onsale">{{ product.price | money }}</div>
+    <div class="was">{{ product.compare_at_price | money }}</div>
+    {% else %}
+    <div class="prod-price">{% if product.price_varies %} {{ 'products.general.from' | t }} {{ product.price_min | money }} - {{ product.price_max | money }} {% else %}{{ product.price | money }}{% endif %}</div>
+    {% endif %}
+  </div>
+</div>

@@ -29,7 +29,7 @@
 
   <div id="product-loop">
     {% for product in collection.products %}
-    <div class="product {% if settings.products_per_row  == '3' %}desktop-4{% cycle ' first', '', ' last' %}{% elsif settings.products_per_row == '4' %}desktop-3{% cycle ' first', '', '', ' last' %}{% endif %} tablet-half mobile-half" id="prod-{{ product.id }}" data-alpha="{{ product.title }}" data-price="{{ product.price }}">
+    <div class="product jumbo-2{% if settings.the_floodening %}{% cycle ' jumbo-first', '', '', '', '', ' jumbo-last' %}{% endif %} {% if settings.products_per_row  == '3' %}desktop-4{% cycle ' first', '', ' last' %}{% elsif settings.products_per_row == '4' %}desktop-3{% cycle ' first', '', '', ' last' %}{% endif %} tablet-half mobile-half" id="prod-{{ product.id }}" data-alpha="{{ product.title }}" data-price="{{ product.price }}">
     {% include 'product-listing' %}
     </div>
     {% endfor %}

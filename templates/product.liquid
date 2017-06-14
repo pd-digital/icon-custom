@@ -5,13 +5,14 @@
 
   <div class="clear"></div>
 
+
   <div class="mobile-hide">
-  {% if settings.show_product_sidebar %}
+  {% if settings.show_product_sidebar and settings.product_page_image_carousel == false %}
   {% include 'collection-sidebar' %}
   {% endif %}
   </div>
 
-  <div id="bside" class="{% if settings.show_product_sidebar %}desktop-10{% else %}desktop-12{% endif %} tablet-6 mobile-3">
+  <div id="bside" class="{% if settings.show_product_sidebar and settings.product_page_image_carousel == false %}desktop-10{% else %}desktop-12{% endif %} tablet-6 mobile-3">
     <div class="product-section">
       {% include 'product-photos' %}
       {% include 'product-description' %}

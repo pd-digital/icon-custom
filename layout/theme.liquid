@@ -172,7 +172,7 @@
       {% endif %}
       {% endif %}
       {% if template != 'index' %}
-      <div id="content" class="row">
+      <div id="content" class="content-row row">
         {% if settings.breadcrumb %}
         {% include 'breadcrumb' %}
         {% endif %}
@@ -296,6 +296,9 @@
 
   {% if template contains 'product' %}
 
+    {% if settings.product_page_image_carousel %}
+      {{ 'pd-product-galleria.js' | asset_url | script_tag }}
+    {% endif %}
   <script type="text/javascript" charset="utf-8">
     //<![CDATA[
     Shopify.Products.recordRecentlyViewed();

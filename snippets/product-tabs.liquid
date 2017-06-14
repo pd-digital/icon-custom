@@ -1,0 +1,48 @@
+<div class="product-tabs">
+  <ul class="product-tabs__tab-nav">
+    <li class="product-tabs__tab-nav__link active" data-target="#product-tab-1">Information</li>
+    <li class="product-tabs__tab-nav__link" data-target="#product-tab-2">Sizing</li>
+    {% if settings.product_shipping_info != "" %}
+    <li class="product-tabs__tab-nav__link" data-target="#product-tab-3">Shipping</li>
+    {% endif %}
+  </ul>
+
+  <div class="product-tabs__tabs">
+    <div id="product-tab-1" class="product-tabs__tabs__tab">
+      {{ product.description }}
+    </div>
+
+    <div id="product-tab-2" class="product-tabs__tab-content">
+      {% assign size_guide = product.title | handleize | append: '-size-guide.png' %}
+      <img src="{{ size_guide | file_img_url: '480x' }}" alt="" onerror="handleMissingImage(this);"/>
+      <p id="size-guide-error" style="display:none;" title="{{ size_guide }}">There is no size guide available for this product.</p>
+    </div>
+
+    {% if settings.product_shipping_info != "" %}
+    <div id="product-tab-3" class="product-tabs__tab-content">
+      {{ settings.product_shipping_info }}
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+<script>
+  var handleMissingImage = function(elem) {
+    elem.style.display = 'none'
+    document.querySelector('#size-guide-error').style.display = 'block'
+  }
+
+  $(document).ready(function() {
+    $(".product-tabs__image-thumb").fancybox()
+
+    $('.product-tabs__tab-nav__link').on('click', function() {
+      var $tabNav = $('.product-tabs__tab-nav')
+      var $target = $($(this).data('target'))
+      var $tabWrapper = $('.product-tabs__tabs')
+      $tabNav.children().removeClass('active')
+      $(this).addClass('active')
+      $tabWrapper.children().hide()
+      $target.show()
+    })
+  })
+</script>
