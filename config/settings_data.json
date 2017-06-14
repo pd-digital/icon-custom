@@ -1538,7 +1538,7 @@
     "slideshow": "flexslider",
     "slide-1-check": true,
     "slide-2-check": true,
-    "slide-3-check": true,
+    "slide-3-check": false,
     "slide-4-check": true,
     "slide-5-check": true,
     "homepage-content": false,
