@@ -1538,7 +1538,7 @@
     "slideshow": "flexslider",
     "slide-1-check": true,
     "slide-2-check": true,
-    "slide-3-check": true,
+    "slide-3-check": false,
     "slide-4-check": true,
     "slide-5-check": true,
     "homepage-content": false,
@@ -2055,7 +2055,6 @@
     "index-links-hover-color": "#999",
     "homepage-wide": "true",
     "pages-right": "about-this-theme",
-    "content_for_index": [],
-    "product_page_image_carousel": false
+    "content_for_index": []
   }
 }
