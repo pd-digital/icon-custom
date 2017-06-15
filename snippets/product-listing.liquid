@@ -16,10 +16,10 @@
 
   <a href="{{ product.url | within: collection }}" title="{{ product.title | escape }}">
     <div class="reveal">
-      <img src="{{ product.featured_image.src | product_img_url: '600x' }}" alt="{{ product.featured_image.alt | escape }}" />
+      <img src="{{ product.featured_image.src | product_img_url: '420x630', crop: 'center' }}" alt="{{ product.featured_image.alt | escape }}" />
       {% if settings.image-flip and product.images.size > 1 %}
       <div class="hidden">
-        <img src="{{ product.images[1] | product_img_url: '600x' }}" alt="{{ product.images[1].alt | escape }}" />
+        <img src="{{ product.images[1] | product_img_url: '420x630', crop: 'center' }}" alt="{{ product.images[1].alt | escape }}" />
         {% include 'collection-product-details' %}
       </div>
       {% endif %}
