@@ -165,7 +165,13 @@
 
       {% if template contains 'collection' %}
       {% if collection.description contains '[banner]' %}
+
+      {% if current_tags != '' %}
       {% capture banner %}{{ collection.handle }}-{{current_tags}}.jpg{% endcapture %}
+      {% else %}
+      {% capture banner %}{{ collection.handle }}.jpg{% endcapture %}
+      {% endif %}
+
       {% capture alt %}{{ collection.title }}{% endcapture %}
       <div class="collection-banner">
         <img src="{{ banner | file_url }}" alt="{{ collection.title }}" onerror="handleMissingCollectionImage(this);">
@@ -173,6 +179,7 @@
       <script>
         var handleMissingCollectionImage = function(elem) { elem.style.display = 'none' }
       </script>
+
       {% endif %}
       {% endif %}
       {% if template != 'index' %}
