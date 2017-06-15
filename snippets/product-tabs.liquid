@@ -14,7 +14,7 @@
 
     <div id="product-tab-2" class="product-tabs__tab-content">
       {% assign size_guide = product.title | handleize | append: '-size-guide.png' %}
-      <img src="{{ size_guide | file_img_url: '480x' }}" alt="" onerror="handleMissingImage(this);"/>
+      <a class="fancybox" href="{{ size_guide | file_img_url: '600x' }}"><img src="{{ size_guide | file_img_url: '480x' }}" alt="" onerror="handleMissingImage(this);"/></a>
       <p id="size-guide-error" style="display:none;" title="{{ size_guide }}">There is no size guide available for this product.</p>
     </div>
 
@@ -33,7 +33,9 @@
   }
 
   $(document).ready(function() {
-    $(".product-tabs__image-thumb").fancybox()
+    $('.fancybox').on('click', function() {
+      if ($(window).width() < 768) return false;
+    });
 
     $('.product-tabs__tab-nav__link').on('click', function() {
       var $tabNav = $('.product-tabs__tab-nav')
