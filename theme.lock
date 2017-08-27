@@ -224,8 +224,9 @@ assets/jquery.currencies.min.js:
   production: 2017-06-16T13:21:42+10:00
   uat: 2017-06-14T22:04:43+10:00
 assets/jquery.duaccordian.js:
-  development: 2017-06-14T20:17:52+10:00   a3721ea0b122386c249166138dcb2c53
+  development: 2017-06-14T20:17:52+10:00
   production: 2017-06-14T20:20:54+10:00
+  uat: 2017-08-27T17:52:15+10:00   a3721ea0b122386c249166138dcb2c53
 assets/jquery.dusticky.js:
   development: 2017-02-14T21:44:16+11:00   484ecfcbe1359d01a46af7268be2f788
   production: 2017-06-14T17:52:51+10:00
@@ -413,11 +414,11 @@ assets/styles.gift-card.scss.liquid:
 assets/stylesheet.css.liquid:
   development: 2017-06-21T18:49:38+10:00   fa61899be1d60ba594f9437998ad13ac
   production: 2017-06-14T20:20:55+10:00
-  uat: 2017-02-14T22:09:42+11:00
+  uat: 2017-08-27T17:54:32+10:00   5d0e25efbbd5bffecc69d9c6d8b6de68
 assets/theme.js.liquid:
   development: 2017-08-27T17:47:27+10:00   6fa787db65a977867f5affc08993db2c
   production: 2017-06-14T17:54:10+10:00
-  uat: 2017-02-14T21:59:05+11:00
+  uat: 2017-08-27T17:50:26+10:00   6fa787db65a977867f5affc08993db2c
 assets/transparency.png:
   development: 2017-01-19T08:09:33+11:00   7254f08e09358212be20073db5a7c09d
   production: 2016-10-17T13:20:53+11:00
@@ -561,7 +562,7 @@ snippets/mobile-navigation.liquid:
 snippets/navigation.liquid:
   development: 2017-08-27T17:44:31+10:00   5d2118fad6e01807f8814d3982364b7b
   production: 2016-10-17T13:20:54+11:00
-  uat: 2017-02-08T21:54:59+11:00
+  uat: 2017-08-27T17:50:24+10:00   5d2118fad6e01807f8814d3982364b7b
 snippets/pagination.liquid:
   development: 2017-01-19T08:09:35+11:00   ce7acf8bcbe0bb5242cbaf37ffbebc9a
   production: 2016-10-17T13:20:54+11:00
