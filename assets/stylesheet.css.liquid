@@ -44,6 +44,15 @@
   width: 98%;
 }
 
+.gridlock.collection .section-title {
+  padding: 0 15px 0 0;
+  border: none;
+}
+
+.gridlock.collection .section-title h1 {
+  text-align: right;
+}
+
 /* !Desktop - Default, 12 column, 1220 + 960 (min 980), IE Standard */
 .gridlock .row .desktop-1  { width: 6.25%; }
 .gridlock .row .desktop-2  { width: 14.5833333333333333%; }
@@ -1917,6 +1926,14 @@ span.prev-prod, span.next-prod {
 
 #sidebar.sticky { float: none; position: fixed; top: 20px; z-index: 6; left: auto; }
 #bside { float: right; margin-top: 30px; }
+
+.collection #bside {
+  margin-top: 0;
+}
+
+.collection #collection-description {
+  margin: 4px 0;
+}
 
 #sidebar h1 { margin-bottom: 20px; }
 #sidebar h4 { text-transform: uppercase; padding-bottom: 5px; margin-bottom: 5px; border-bottom: 1px solid {{ settings.dotted_color }}; }
