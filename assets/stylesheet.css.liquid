@@ -2018,7 +2018,8 @@ ul#sort-me li.filter ul li {
   z-index: 1;
   position: absolute;
   top: 50%;
-  margin-top: -20px;
+  margin-top: -30px;
+  color: black;
 }
 
 .pd-product-galleria .owl-buttons-right {
@@ -2031,7 +2032,7 @@ ul#sort-me li.filter ul li {
 
 .pd-product-galleria .owl-prev[data-disabled="true"],
 .pd-product-galleria .owl-next[data-disabled="true"] {
-  background-color: #eee;
+  display: none;
 }
 
 .pd-product-galleria .owl-next {
@@ -2891,11 +2892,11 @@ iframe { width: 100%; }
 
 
 .owl-buttons > div {
-  background: {{ settings.button_color }};
-  color: {{ settings.button_text }};
+  background: none;
+  color: black;
   padding: 10px 15px;
   font-family: FontAwesome;
-  font-size: 18px;
+  font-size: 32px;
   display: inline-block;
   text-align: center;
   transition: background-color 300ms ease-in-out;
@@ -2907,8 +2908,6 @@ iframe { width: 100%; }
 
 .owl-buttons > div:hover {
   cursor: pointer;
-  color: {{ settings.button_text }};
-  background: {{ settings.button_hover }};
 }
 
 .owl-prev {
