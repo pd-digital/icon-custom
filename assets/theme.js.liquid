@@ -3,6 +3,7 @@ $(document).ready(function(){
   $('.no-fouc').removeClass('no-fouc');
   $('.load-wait').addClass('hide');
 
+  $('#main-nav .dropdown [href="#"]').on('click', function(e){ e.preventDefault(); });
 
   var Heightcalculate = $('header').height();
 
