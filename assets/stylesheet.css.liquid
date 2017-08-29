@@ -2017,13 +2017,28 @@ ul#sort-me li.filter ul li {
 .pd-product-galleria .owl-buttons {
   z-index: 1;
   position: absolute;
-  top: 50%;
-  margin-top: -30px;
+  top: 0;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
   color: black;
+  opacity: 0.5;
+}
+
+.pd-product-galleria .owl-buttons:hover {
+  background-color: rgba(255,255,255,0.15);
+  opacity: 1;
+}
+
+.pd-product-galleria .owl-buttons .owl-next,
+.pd-product-galleria .owl-buttons .owl-prev {
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .pd-product-galleria .owl-buttons-right {
-  right: -8px;
+  right: 0;
 }
 
 .pd-product-galleria .owl-next {
@@ -2896,7 +2911,7 @@ iframe { width: 100%; }
   color: black;
   padding: 10px 15px;
   font-family: FontAwesome;
-  font-size: 32px;
+  font-size: 42px;
   display: inline-block;
   text-align: center;
   transition: background-color 300ms ease-in-out;
