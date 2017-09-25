@@ -412,7 +412,7 @@ assets/styles.gift-card.scss.liquid:
   production: 2016-10-17T13:20:52+11:00
   uat: 2017-02-08T21:54:57+11:00
 assets/stylesheet.css.liquid:
-  development: 2017-08-29T20:31:03+10:00   6d0b7f74760cd8a306764f11fe2e2b4e
+  development: 2017-09-25T20:40:37+10:00   dcbf97adf2885ea6adec9738e5865071
   production: 2017-08-27T20:07:36+10:00   1959cc8ef7cd52450c3bb782790756c5
   uat: 2017-08-27T20:01:14+10:00   719144286cea3cd3243e450311e0a1c2
 assets/theme.js.liquid:
@@ -572,7 +572,7 @@ snippets/popup.liquid:
   production: 2016-10-17T13:20:54+11:00
   uat: 2017-02-08T21:54:59+11:00
 snippets/product-description.liquid:
-  development: 2017-06-14T20:37:58+10:00   833e7bb1e3f4309925374760dd3c3edb
+  development: 2017-09-25T20:35:55+10:00   dbe18069b97ba5d7a8f3853d81608e44
   production: 2017-06-14T17:53:26+10:00
   uat: 2017-02-14T21:58:02+11:00
 snippets/product-listing.liquid:
