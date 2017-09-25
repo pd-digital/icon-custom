@@ -23,8 +23,8 @@
     <div class="product-offers" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
       <p id="product-price">
         {% if product.available %}
-        {% if product.compare_at_price > product.price %}
-        <span class="product-price" itemprop="price">{{ product.price | money }}</span>&nbsp;<span class="was">{{ product.compare_at_price | money }}</span>
+        {% if product.price < product.compare_at_price %}
+        <span class="was">{{ product.compare_at_price | money }}</span>&nbsp;<span class="product-price" itemprop="price">{{ product.price | money }}</span>
         {% else %}
         <span class="product-price" itemprop="price">{{ product.price | money }}</span>
         {% endif %}
