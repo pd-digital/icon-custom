@@ -414,7 +414,7 @@ assets/styles.gift-card.scss.liquid:
 assets/stylesheet.css.liquid:
   development: 2017-09-25T21:14:16+10:00   c2af8e0a331ee30e044a04e30647b884
   production: 2017-08-27T20:07:36+10:00   1959cc8ef7cd52450c3bb782790756c5
-  uat: 2017-09-25T20:49:02+10:00   6a79a064db80688ed2d95f8a639047ee
+  uat: 2017-09-25T21:14:58+10:00   c2af8e0a331ee30e044a04e30647b884
 assets/theme.js.liquid:
   development: 2017-08-27T17:47:27+10:00   6fa787db65a977867f5affc08993db2c
   production: 2017-08-27T17:56:14+10:00   6fa787db65a977867f5affc08993db2c
@@ -466,7 +466,7 @@ snippets/collection-listing.liquid:
 snippets/collection-product-details.liquid:
   development: 2017-09-25T21:10:03+10:00   d29115d36a23d016ad56ae8108c81ce0
   production: 2017-06-14T17:53:59+10:00
-  uat: 2017-02-08T21:54:59+11:00
+  uat: 2017-09-25T21:14:58+10:00   d29115d36a23d016ad56ae8108c81ce0
 snippets/collection-sidebar.liquid:
   development: 2017-01-19T08:09:34+11:00   ba5823abd7b2512d487a2c14148de538
   production: 2016-10-17T13:20:53+11:00
@@ -574,7 +574,7 @@ snippets/popup.liquid:
 snippets/product-description.liquid:
   development: 2017-09-25T21:14:16+10:00   88a1714b59961031d6bf5a429534b867
   production: 2017-06-14T17:53:26+10:00
-  uat: 2017-09-25T20:49:01+10:00   f9abd6ae9e98b196d5ba47347d1b68f9
+  uat: 2017-09-25T21:14:57+10:00   88a1714b59961031d6bf5a429534b867
 snippets/product-listing.liquid:
   development: 2017-06-15T23:22:48+10:00   6a6b3199249528880e9ffad9121d75f2
   production: 2017-06-16T13:21:41+10:00
