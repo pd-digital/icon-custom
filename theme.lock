@@ -464,7 +464,7 @@ snippets/collection-listing.liquid:
   production: 2016-10-17T13:20:53+11:00
   uat: 2017-02-08T21:54:59+11:00
 snippets/collection-product-details.liquid:
-  development: 2017-02-06T21:54:24+11:00   0c0b3f12adab9a8ec379e0cd31338490
+  development: 2017-09-25T21:10:03+10:00   d29115d36a23d016ad56ae8108c81ce0
   production: 2017-06-14T17:53:59+10:00
   uat: 2017-02-08T21:54:59+11:00
 snippets/collection-sidebar.liquid:
@@ -572,7 +572,7 @@ snippets/popup.liquid:
   production: 2016-10-17T13:20:54+11:00
   uat: 2017-02-08T21:54:59+11:00
 snippets/product-description.liquid:
-  development: 2017-09-25T20:44:28+10:00   f9abd6ae9e98b196d5ba47347d1b68f9
+  development: 2017-09-25T21:09:59+10:00   14a645993ab0a48c54f72bea4c4cc68e
   production: 2017-06-14T17:53:26+10:00
   uat: 2017-02-14T21:58:02+11:00
 snippets/product-listing.liquid:
