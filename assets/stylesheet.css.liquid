@@ -1784,8 +1784,9 @@ span.prev-prod, span.next-prod {
 
 .compare-price, .product-price {  }
 
+.was + .product-price { color: red; }
 .was, .product-compare-price, .compare-price {  text-decoration: line-through; }
-.was { display: inline; margin-left: 5px; }
+.was { display: inline; margin-right: 5px; }
 .onsale { display: inline; color: {{ settings.sale-color }}; }
 
 
@@ -1820,6 +1821,8 @@ span.prev-prod, span.next-prod {
   line-height: 13px;
   padding-top: 13px;
 }
+
+.sale-item.icn { width: auto; }
 
 .so {
   z-index: 4;
